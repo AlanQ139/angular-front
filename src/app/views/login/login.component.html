@@ -1,23 +1,45 @@
-<div class="p-grid p-justify-center">
-    <div class="p-col-8 p-sm-6 p-md-4">
-        <p-card>
-            <div class="p-grid">
-                <div class="p-col-12" text-center>
-                    <i class="fas fa-sign-in-alt"></i> 
-                    <h2>Login</h2>
-                </div>
-                <div class="p-col-12">
-                    <label for="">Usuario: </label>
-                    <input class="p-col-12" type="text" pInputText />
-                </div>
-                <div class="p-col-12">
-                    <label for="">Senha: </label>
-                    <input class="p-col-12" type="text" pInputText />
-                </div>
-                <div class="p-col-12">
-                    <button pButton type="button" label="Entrar" p-col-12></button>
-                </div>
-            </div>
-        </p-card>
-    </div>
+<div class="p-grid p-justify-center card">
+  <div class="p-col-10 p-sm-6 p-md-4">
+    <p-card>
+      <div class="p-grid">
+        <div class="p-col-12 text-center">
+          <img src="./assets/Logo.png" width="60%" height="50%">
+          <!--<i class="fas fa-car fa-4x" style="color: #007ad9;"></i>-->
+          <h2>Collectio</h2>
+          <h3>Insira um Usuario e Senha para entrar</h3>
+        </div>
+        <div class="p-col-12">
+          <label for="">Usuário:</label>
+          <!--Propriedade do ANgular para inserir dados/ Two way data biding-->
+          <!--Ngmodule + propriedade usada nome na documentação e Login.TS-->
+          <input
+            [(ngModel)]="requestLogin.login"
+            class="p-col-12"
+            type="text"
+            pInputText
+          />
+        </div>
+        <!--Valores guardados na variavel e depois passados para o BackEnd-->
+        <div class="p-col-12">
+          <label for="">Senha:</label>
+          <input
+            [(ngModel)]="requestLogin.password"
+            class="p-col-12"
+            type="password"
+            pInputText
+          />
+        </div>
+        <!--Evento de Click gera retorno para o metodo criado no COmponent Ts -->
+        <div class="p-col-12">
+          <button
+            (click)="doLogin()"
+            pButton
+            type="button"
+            label="Entrar"
+            class="p-col-12"
+          ></button>
+        </div>
+      </div>
+    </p-card>
+  </div>
 </div>

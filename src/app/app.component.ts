@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Bem vindos ao Ang front';
-  faCoffee = faCoffee;
+  title = 'Bem vindo ao Curso de Frontend com Angular';
 }
-
