@@ -19,7 +19,6 @@ export class AlertService {
     this.showAlert(title, message, 'error');
   }
 
-  /* Metodo que chama*/
   private showAlert(
     title: string,
     message: string,

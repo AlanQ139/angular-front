@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
+import { ResumoTextoModule } from './views/resumo-texto/resumo-texto.module';
 
-/*Parte responsavel pelas rotas da aplicação*/
-/* Childrn carrega o module e a promisse e retornando o Module*/
+/**Declarar o obj dos modulos */
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {
@@ -13,6 +13,13 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
+  /**m = Modulo then recebe modulo M e retorna uma restu .... module*/
+  {path:'resumo-texto', 
+  loadChildren: () =>
+    import('./views/resumo-texto/resumo-texto.module').then(
+      (m) => m.ResumoTextoModule
+    ),
+  }
 ];
 
 @NgModule({
