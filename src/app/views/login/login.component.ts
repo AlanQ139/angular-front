@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     this.requestLogin = new RequestLogin();
   }
 
+  /* Faz chamada pro DOLogin recebe o token da API na variavel data, nesse modelo n esta guardando o valor*/
   public doLogin(): void {
     this.loginService.doLogin(this.requestLogin).subscribe(
       (data) => {
