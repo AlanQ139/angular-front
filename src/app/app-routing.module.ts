@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'dashboard',//só acessar se estiver logado, autorizado o mesmo nos outros
     //chama passa aray e diz qual guarda do componets
-    canActivate: [AuthGuardService],//com isso configura a guarde rota
+    //canActivate: [AuthGuardService],//com isso configura a guarde rota
     loadChildren: () =>
       import('./views/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
 
   //redirecionamento caso n ache uma rota
-  {path:'**', redirectTo: ''},
+  //{path:'**', redirectTo: ''},
 
   /**m = Modulo then recebe modulo M e retorna uma restu .... module*/
   {path:'resumo-texto', 
@@ -27,12 +27,20 @@ const routes: Routes = [
     import('./views/resumo-texto/resumo-texto.module').then(
       (m) => m.ResumoTextoModule
     ),
-  }
+  },
+
+  {path:'page-rank', 
+  loadChildren: () =>
+    import('./views/page-rank/page-rank-routing.module').then(
+      (m) => m.PageRankRoutingModule
+    ),
+  },
 ];
 
 //comentar o useHash ou setar dalse para usar diretamente pela url sem logar
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  //imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

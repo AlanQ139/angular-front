@@ -17,6 +17,6 @@ export class LoginService {
     return this.httpClient.post<ResponseLogin>(
       'http://localhost:8080/api/login',
       requestLogin
-    ).pipe(tap(loginResponse => this.authService.loginResponse = loginResponse));
+    )/*.pipe(tap(loginResponse => this.authService.loginResponse = loginResponse));*///comentar para usar sem o esquema de rotas
   }
 }

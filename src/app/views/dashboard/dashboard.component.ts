@@ -19,4 +19,9 @@ export class DashboardComponent implements OnInit {
   public doResumo(): void{
     this.router.navigate(['resumo-texto'])
   }
+
+  /*Metodo para modificar a a tela de Dashbord para Page Rank */
+  public doRank(): void{
+    this.router.navigate(['page-rank'])
+  }
 }
