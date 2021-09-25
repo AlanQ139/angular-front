@@ -15,8 +15,9 @@ export class LoginService {
   //com o pipe tap o login é encaspulado e fica aqui a resposabilidade atraves do service
   public doLogin(requestLogin: RequestLogin): Observable<ResponseLogin> {
     return this.httpClient.post<ResponseLogin>(
-      'http://localhost:8080/api/login',
+      /*'http://localhost:8080/api/login',*/"https://localhost:5001/teste/api/login",
       requestLogin
     )/*.pipe(tap(loginResponse => this.authService.loginResponse = loginResponse));*///comentar para usar sem o esquema de rotas
   }
 }
+8
